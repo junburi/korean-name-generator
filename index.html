@@ -43,8 +43,6 @@ body::before {
     radial-gradient(ellipse at 85% 85%, rgba(176,106,255,0.07) 0%, transparent 55%);
   pointer-events: none; z-index: 0;
 }
-
-/* HEADER */
 header {
   text-align: center;
   padding: 60px 24px 40px;
@@ -81,11 +79,7 @@ h1 .g2 { color: var(--cyan); }
   max-width: 480px;
   margin: 0 auto;
 }
-
-/* MAIN */
 main { max-width: 780px; margin: 0 auto; padding: 0 20px 80px; position: relative; z-index: 1; }
-
-/* CARD */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -111,8 +105,6 @@ main { max-width: 780px; margin: 0 auto; padding: 0 20px 80px; position: relativ
   margin-bottom: 20px;
   font-family: 'Courier New', monospace;
 }
-
-/* INPUT */
 .input-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -146,20 +138,7 @@ main { max-width: 780px; margin: 0 auto; padding: 0 20px 80px; position: relativ
   box-shadow: 0 0 0 3px var(--pink-soft);
 }
 .field input::placeholder { color: var(--text-faint); }
-.select-w { position: relative; }
-.select-w::after {
-  content: '▾';
-  position: absolute; right: 14px; top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-faint); pointer-events: none;
-}
-
-/* GENDER TOGGLE */
-.gender-toggle {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-}
+.gender-toggle { display: flex; gap: 8px; margin-bottom: 20px; }
 .gender-btn {
   flex: 1;
   padding: 11px;
@@ -176,8 +155,6 @@ main { max-width: 780px; margin: 0 auto; padding: 0 20px 80px; position: relativ
 }
 .gender-btn.active.male { background: var(--purple); border-color: var(--purple); color: #fff; }
 .gender-btn.active.female { background: var(--pink); border-color: var(--pink); color: #fff; }
-
-/* GENERATE BTN */
 .gen-btn {
   width: 100%;
   padding: 16px;
@@ -194,13 +171,9 @@ main { max-width: 780px; margin: 0 auto; padding: 0 20px 80px; position: relativ
 }
 .gen-btn:hover { opacity: 0.9; }
 .gen-btn:active { transform: scale(0.99); }
-
-/* RESULT */
 #result { display: none; }
 #result.show { display: block; animation: fadeUp .5s ease; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
-
-/* NAME HERO */
 .name-hero {
   text-align: center;
   padding: 40px 24px 32px;
@@ -211,21 +184,8 @@ main { max-width: 780px; margin: 0 auto; padding: 0 20px 80px; position: relativ
   position: relative;
   overflow: hidden;
 }
-.name-hero::before {
-  content: '🇰🇷';
-  position: absolute;
-  font-size: 120px;
-  opacity: 0.04;
-  top: -10px; right: -10px;
-}
-.nh-label {
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  color: var(--text-soft);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  font-family: 'Courier New', monospace;
-}
+.name-hero::before { content: '🇰🇷'; position: absolute; font-size: 120px; opacity: 0.04; top: -10px; right: -10px; }
+.nh-label { font-size: 11px; letter-spacing: 0.2em; color: var(--text-soft); text-transform: uppercase; margin-bottom: 12px; font-family: 'Courier New', monospace; }
 .nh-korean {
   font-size: clamp(52px, 16vw, 90px);
   font-weight: 900;
@@ -236,197 +196,94 @@ main { max-width: 780px; margin: 0 auto; padding: 0 20px 80px; position: relativ
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.nh-roman {
-  font-size: 18px;
-  color: var(--text-soft);
-  font-family: 'Courier New', monospace;
-  margin-bottom: 6px;
-}
-.nh-english {
-  font-size: 13px;
-  color: var(--text-faint);
-}
-
-/* INFO GRID */
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 16px;
-}
+.nh-roman { font-size: 18px; color: var(--text-soft); font-family: 'Courier New', monospace; margin-bottom: 6px; }
+.nh-english { font-size: 13px; color: var(--text-faint); }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
 @media(max-width:480px) { .info-grid { grid-template-columns: 1fr 1fr; } }
-.info-box {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 10px;
-  text-align: center;
-}
+.info-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 10px; text-align: center; }
 .ib-label { font-size: 10px; color: var(--text-faint); font-family: 'Courier New', monospace; margin-bottom: 5px; text-transform: uppercase; }
 .ib-val { font-size: 20px; font-weight: 700; color: var(--text); }
 .ib-sub { font-size: 11px; color: var(--text-soft); margin-top: 2px; }
-
-/* MEANING CARD */
-.meaning-card {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 14px;
-}
-.mc-title {
-  font-size: 12px;
-  color: var(--cyan);
-  font-weight: 700;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: 'Courier New', monospace;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.mc-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
+.meaning-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 14px; }
+.mc-title { font-size: 12px; color: var(--cyan); font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; font-family: 'Courier New', monospace; letter-spacing: 0.1em; text-transform: uppercase; }
+.mc-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
 .mc-row:last-child { border-bottom: none; }
 .mc-hangul { font-size: 22px; font-weight: 700; min-width: 36px; text-align: center; }
 .mc-info { flex: 1; }
 .mc-name { font-size: 13px; font-weight: 600; }
 .mc-mean { font-size: 12px; color: var(--text-soft); margin-top: 2px; }
 .mc-roman { font-family: 'Courier New', monospace; font-size: 11px; color: var(--text-faint); }
-
-/* PRONUNCIATION */
-.pron-box {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px 18px;
-  margin-bottom: 14px;
-}
-.pron-title {
-  font-size: 12px;
-  color: var(--gold);
-  font-weight: 700;
-  margin-bottom: 12px;
-  font-family: 'Courier New', monospace;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.pron-syllables {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-}
-.pron-syl {
-  text-align: center;
-  padding: 10px 16px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
+.pron-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; }
+.pron-title { font-size: 12px; color: var(--gold); font-weight: 700; margin-bottom: 12px; font-family: 'Courier New', monospace; letter-spacing: 0.1em; text-transform: uppercase; }
+.pron-syllables { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.pron-syl { text-align: center; padding: 10px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
 .ps-hangul { font-size: 20px; font-weight: 700; color: var(--gold); }
 .ps-roman { font-size: 11px; color: var(--text-soft); font-family: 'Courier New', monospace; margin-top: 2px; }
 .pron-tip { font-size: 12px; color: var(--text-soft); line-height: 1.6; }
-
-/* ALTERNATIVES */
-.alt-section {
-  margin-bottom: 14px;
-}
-.alt-title {
-  font-size: 12px;
-  color: var(--text-soft);
-  font-family: 'Courier New', monospace;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.alt-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 8px;
-}
-.alt-card {
-  background: var(--surface2);
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  padding: 12px;
-  text-align: center;
-  cursor: pointer;
-  transition: border-color .15s, transform .15s;
-}
+.alt-section { margin-bottom: 14px; }
+.alt-title { font-size: 12px; color: var(--text-soft); font-family: 'Courier New', monospace; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+.alt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+.alt-card { background: var(--surface2); border: 1.5px solid var(--border); border-radius: 10px; padding: 12px; text-align: center; cursor: pointer; transition: border-color .15s, transform .15s; }
 .alt-card:hover { border-color: var(--pink); transform: translateY(-2px); }
 .alt-card.selected { border-color: var(--pink); background: var(--pink-soft); }
 .ac-hangul { font-size: 22px; font-weight: 700; margin-bottom: 3px; }
 .ac-roman { font-size: 11px; color: var(--text-soft); font-family: 'Courier New', monospace; margin-bottom: 4px; }
 .ac-meaning { font-size: 10px; color: var(--text-faint); }
-
-/* SHARE */
-.share-box {
-  text-align: center;
-  padding: 20px;
-  background: linear-gradient(135deg, var(--pink-soft), var(--purple-soft));
-  border-radius: 12px;
-  border: 1px solid rgba(255,107,157,0.2);
-}
+.share-box { text-align: center; padding: 20px; background: linear-gradient(135deg, var(--pink-soft), var(--purple-soft)); border-radius: 12px; border: 1px solid rgba(255,107,157,0.2); }
 .share-korean { font-size: 32px; font-weight: 900; margin-bottom: 6px; color: var(--text); }
 .share-desc { font-size: 13px; color: var(--text-soft); margin-bottom: 14px; }
-.copy-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 22px;
-  background: var(--pink);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: opacity .15s;
-}
+.copy-btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px; background: var(--pink); color: #fff; border: none; border-radius: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: opacity .15s; }
 .copy-btn:hover { opacity: 0.85; }
-
-/* HOW IT WORKS */
-.how-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
+.how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 @media(max-width:480px) { .how-grid { grid-template-columns: 1fr; } }
-.how-box {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px;
-}
+.how-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
 .hb-num { font-size: 28px; font-weight: 900; color: var(--pink); margin-bottom: 6px; line-height: 1; }
 .hb-title { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
 .hb-desc { font-size: 12px; color: var(--text-soft); line-height: 1.6; }
+.popular-names { display: flex; flex-wrap: wrap; gap: 8px; }
+.pop-name { padding: 7px 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; font-size: 13px; color: var(--text-soft); cursor: pointer; transition: all .15s; }
+.pop-name:hover { background: var(--pink-soft); border-color: var(--pink); color: var(--pink); }
 
-/* POPULAR */
-.popular-names {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+/* FAQ */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
 }
-.pop-name {
-  padding: 7px 14px;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 20px;
+.faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.faq-item:first-child { padding-top: 0; }
+.faq-q {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+.faq-q::before {
+  content: 'Q';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  background: var(--pink-soft);
+  border: 1px solid rgba(255,107,157,0.3);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--pink);
+  font-family: 'Courier New', monospace;
+  margin-top: 1px;
+}
+.faq-a {
   font-size: 13px;
   color: var(--text-soft);
-  cursor: pointer;
-  transition: all .15s;
+  line-height: 1.7;
+  padding-left: 32px;
 }
-.pop-name:hover { background: var(--pink-soft); border-color: var(--pink); color: var(--pink); }
+.faq-a strong { color: var(--cyan); font-weight: 600; }
 
 footer {
   text-align: center;
@@ -450,7 +307,6 @@ footer {
 </header>
 
 <main>
-  <!-- INPUT CARD -->
   <div class="card">
     <div class="card-title">Enter Your Name</div>
     <div class="input-group">
@@ -472,26 +328,19 @@ footer {
       </div>
     </div>
     <button class="gen-btn" onclick="generate()">Generate My Korean Name ✨</button>
-
-    <!-- Popular names -->
     <div style="margin-top:18px;padding-top:16px;border-top:1px solid var(--border)">
       <div style="font-size:11px;color:var(--text-faint);margin-bottom:10px;font-family:'Courier New',monospace;text-transform:uppercase;letter-spacing:.1em">Try these popular names</div>
       <div class="popular-names" id="popularNames"></div>
     </div>
   </div>
 
-  <!-- RESULT -->
   <div id="result">
-
-    <!-- Name Hero -->
     <div class="name-hero">
       <div class="nh-label">Your Korean Name</div>
       <div class="nh-korean" id="resultHangul"></div>
       <div class="nh-roman" id="resultRoman"></div>
       <div class="nh-english" id="resultEnglish"></div>
     </div>
-
-    <!-- Info Grid -->
     <div class="info-grid">
       <div class="info-box">
         <div class="ib-label">Syllables</div>
@@ -509,33 +358,24 @@ footer {
         <div class="ib-sub">이름</div>
       </div>
     </div>
-
-    <!-- Meaning -->
     <div class="meaning-card">
       <div class="mc-title">✦ Name Meaning</div>
       <div id="meaningRows"></div>
     </div>
-
-    <!-- Pronunciation -->
     <div class="pron-box">
       <div class="pron-title">🔊 How to Pronounce</div>
       <div class="pron-syllables" id="pronSyllables"></div>
       <div class="pron-tip" id="pronTip"></div>
     </div>
-
-    <!-- Alternatives -->
     <div class="alt-section">
       <div class="alt-title">Other Korean Name Options for You</div>
       <div class="alt-grid" id="altGrid"></div>
     </div>
-
-    <!-- Share -->
     <div class="share-box">
       <div class="share-korean" id="shareKorean"></div>
       <div class="share-desc" id="shareDesc"></div>
       <button class="copy-btn" onclick="copyResult()">📋 Copy & Share</button>
     </div>
-
   </div>
 
   <!-- HOW IT WORKS -->
@@ -565,6 +405,62 @@ footer {
     </div>
   </div>
 
+  <!-- FAQ -->
+  <div class="card" style="margin-top:20px">
+    <div class="card-title">Frequently Asked Questions</div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can foreigners have a Korean name?</div>
+      <div class="faq-a">Yes! Many foreigners living in Korea, studying Korean, or fans of K-pop and K-dramas choose a Korean name. It is commonly used in workplaces, language schools, or simply for fun. Having a Korean name makes it easier for native speakers to address you and shows respect for the culture.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What is the most popular Korean name right now?</div>
+      <div class="faq-a">As of recent years, <strong>민준 (Min-jun)</strong> is the most popular name for boys, and <strong>서연 (Seo-yeon)</strong> tops the list for girls. These names are chosen for their beautiful Hanja meanings — Min-jun means "clever and talented," while Seo-yeon means "auspicious and beautiful."</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Do Korean names have meanings?</div>
+      <div class="faq-a">Absolutely. Most Korean names are composed of Chinese characters called <strong>Hanja (한자)</strong>, each carrying a specific meaning. For example, 민 (敏) means "clever," 준 (俊) means "talented," and 지 (智) means "wisdom." Parents spend a great deal of thought choosing characters that express their hopes for their child.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do Korean surnames work?</div>
+      <div class="faq-a">Korean surnames (성, seong) come before the given name. There are only about 280 surnames in Korea, and just three — <strong>Kim (김), Lee (이), and Park (박)</strong> — account for nearly 45% of the entire population. Other common surnames include Choi (최), Jung (정), Kang (강), and Yoon (윤).</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between a Korean name and a K-pop stage name?</div>
+      <div class="faq-a">A Korean name is a person's official name registered at birth. A K-pop stage name is a separate artistic identity chosen by the artist or their agency — it may sound cool or be easy for international fans to remember. For example, <strong>BTS member V's real name is Kim Taehyung (김태형)</strong>, while "V" is his stage name.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do you pronounce Korean names in English?</div>
+      <div class="faq-a">Korean uses the Revised Romanization system to write Korean sounds in English letters. Each syllable is pronounced clearly and with roughly equal stress. For example, <strong>지민 is Ji-min</strong> (jee-min), and <strong>태형 is Tae-hyung</strong> (teh-hyung). The key is to pronounce each syllable separately rather than blending them together as in English.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I legally use a Korean name in Korea?</div>
+      <div class="faq-a">Foreigners cannot legally change their official name to Korean without citizenship, but you can freely use a Korean name socially, in school, or at work. Many expats and language learners adopt a Korean name for daily use. It is a common and welcomed practice in Korean culture.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Are Korean names unisex?</div>
+      <div class="faq-a">Some Korean names are unisex, such as <strong>지민 (Ji-min)</strong> and <strong>유진 (Yu-jin)</strong>, which are used by both men and women. However, many names lean toward one gender based on the Hanja characters used. Names with characters meaning "strength" or "heroism" tend to be masculine, while names with characters meaning "grace" or "elegance" are often feminine.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Why do so many Koreans share the same surname?</div>
+      <div class="faq-a">Korean surnames have clan origins (본관, bon-gwan) tracing back hundreds of years. During the Joseon Dynasty, surname adoption became widespread and many families adopted the same common surnames. Today, there are over 600 Kim clans alone, all with different regional origins — so two people named Kim are not necessarily related.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What does my Korean name say about me?</div>
+      <div class="faq-a">Your Korean name reflects the phonetic sounds of your English name mapped to traditional Korean given names and their Hanja meanings. The result blends your identity with Korean naming culture — giving you a name that sounds natural in Korean while carrying meaningful characters. Think of it as a cultural bridge between your name and Korea's rich naming traditions.</div>
+    </div>
+
+  </div>
+
 </main>
 
 <footer>
@@ -574,25 +470,6 @@ footer {
 </footer>
 
 <script>
-// ── 영어 → 한국어 음절 변환 규칙 ──
-const phoneticMap = {
-  // 자음
-  'b':'ㅂ','c':'ㅋ','d':'ㄷ','f':'ㅍ','g':'ㄱ','h':'ㅎ',
-  'j':'ㅈ','k':'ㅋ','l':'ㄹ','m':'ㅁ','n':'ㄴ','p':'ㅍ',
-  'q':'ㅋ','r':'ㄹ','s':'ㅅ','t':'ㅌ','v':'ㅂ','w':'ㅇ',
-  'x':'ㅅ','y':'ㅇ','z':'ㅈ',
-  // 이중자음
-  'ch':'ㅊ','sh':'ㅅ','th':'ㄷ','ph':'ㅍ','wh':'ㅇ','gh':'ㄱ',
-  // 모음
-  'a':'아','e':'에','i':'이','o':'오','u':'우',
-  'ae':'애','ai':'아이','au':'아우','aw':'오','ay':'에이',
-  'ea':'이','ee':'이','ei':'에이','eo':'이어','eu':'유',
-  'ia':'이아','ie':'이에','io':'이오','oa':'오아','oe':'오에',
-  'oo':'우','ou':'오우','ow':'오우','oy':'오이',
-  'ua':'우아','ue':'우에','ui':'우이',
-};
-
-// ── 인기 한국 이름 데이터 (성별, 의미 포함) ──
 const koreanNames = {
   F: [
     { hangul:'지아', roman:'Ji-A', meaning:'Wisdom & Love', chars:[{h:'지',m:'Wisdom (智)'},{h:'아',m:'Love/Elegant (雅)'}] },
@@ -628,7 +505,6 @@ const koreanNames = {
   ],
 };
 
-// ── 성(姓) 데이터 ──
 const surnames = [
   { hangul:'김', roman:'Kim', meaning:'Gold', english:'Kim' },
   { hangul:'이', roman:'Lee', meaning:'Plum tree', english:'Lee' },
@@ -642,7 +518,6 @@ const surnames = [
   { hangul:'임', roman:'Lim', meaning:'Forest', english:'Lim' },
 ];
 
-// ── 영어 이름 → 성씨 매핑 ──
 const surnameMap = {
   'smith':'최','johnson':'정','williams':'윤','jones':'강','brown':'박',
   'davis':'김','miller':'이','wilson':'조','moore':'장','taylor':'임',
@@ -664,15 +539,11 @@ const surnameMap = {
   'patterson':'강','hughes':'조','flores':'윤','washington':'장','butler':'임',
 };
 
-// 영어 이름 첫 알파벳으로 성씨 선택
 function getSurname(lastName, firstName) {
   if (lastName) {
     const key = lastName.toLowerCase().trim();
-    if (surnameMap[key]) {
-      return surnames.find(s => s.hangul === surnameMap[key]) || surnames[0];
-    }
+    if (surnameMap[key]) return surnames.find(s => s.hangul === surnameMap[key]) || surnames[0];
   }
-  // 이름 첫 알파벳으로 매핑
   const idx = (firstName.charCodeAt(0) - 65) % surnames.length;
   return surnames[Math.max(0, idx)];
 }
@@ -692,83 +563,29 @@ function generate() {
   const firstName = document.getElementById('firstName').value.trim();
   const lastName = document.getElementById('lastName').value.trim();
   if (!firstName) { alert('Please enter your first name!'); return; }
-
   const namePool = koreanNames[currentGender];
-  // 이름 첫 알파벳 기반으로 주 이름 선택
   const idx = (firstName.toLowerCase().charCodeAt(0) - 97 + namePool.length) % namePool.length;
   selectedName = namePool[idx];
   currentSurname = getSurname(lastName, firstName);
-
   const fullHangul = currentSurname.hangul + selectedName.hangul;
   const fullRoman = currentSurname.roman + ' ' + selectedName.roman;
-
-  // Hero
   document.getElementById('resultHangul').textContent = fullHangul;
   document.getElementById('resultRoman').textContent = fullRoman;
-  document.getElementById('resultEnglish').textContent =
-    `${firstName}${lastName ? ' ' + lastName : ''} → ${fullHangul}`;
-
-  // Info
+  document.getElementById('resultEnglish').textContent = `${firstName}${lastName ? ' ' + lastName : ''} → ${fullHangul}`;
   document.getElementById('r-syl').textContent = fullHangul.length;
   document.getElementById('r-family').textContent = currentSurname.hangul;
   document.getElementById('r-given').textContent = selectedName.hangul;
-
-  // Meaning
   const meaningRows = document.getElementById('meaningRows');
-  const surnameRow = `<div class="mc-row">
-    <div class="mc-hangul" style="color:var(--pink)">${currentSurname.hangul}</div>
-    <div class="mc-info">
-      <div class="mc-name">Family Name (성) · ${currentSurname.roman}</div>
-      <div class="mc-mean">Means: "${currentSurname.meaning}"</div>
-      <div class="mc-roman">One of Korea's most common surnames</div>
-    </div>
-  </div>`;
-  const givenRows = selectedName.chars.map(c => `
-    <div class="mc-row">
-      <div class="mc-hangul" style="color:var(--cyan)">${c.h}</div>
-      <div class="mc-info">
-        <div class="mc-name">Given Name Character</div>
-        <div class="mc-mean">${c.m}</div>
-        <div class="mc-roman">Part of: ${selectedName.roman}</div>
-      </div>
-    </div>`).join('');
+  const surnameRow = `<div class="mc-row"><div class="mc-hangul" style="color:var(--pink)">${currentSurname.hangul}</div><div class="mc-info"><div class="mc-name">Family Name (성) · ${currentSurname.roman}</div><div class="mc-mean">Means: "${currentSurname.meaning}"</div><div class="mc-roman">One of Korea's most common surnames</div></div></div>`;
+  const givenRows = selectedName.chars.map(c => `<div class="mc-row"><div class="mc-hangul" style="color:var(--cyan)">${c.h}</div><div class="mc-info"><div class="mc-name">Given Name Character</div><div class="mc-mean">${c.m}</div><div class="mc-roman">Part of: ${selectedName.roman}</div></div></div>`).join('');
   meaningRows.innerHTML = surnameRow + givenRows;
-
-  // Pronunciation
-  const pronEl = document.getElementById('pronSyllables');
-  const syllables = [...fullHangul].map(h => {
-    const romanParts = fullRoman.replace(' ','').split('-');
-    return { h, r: '' };
-  });
-  // 음절별 발음 표시
-  const allSyls = [
-    { h: currentSurname.hangul, r: currentSurname.roman },
-    ...selectedName.chars.map((c,i) => ({ h: c.h, r: selectedName.roman.split('-')[i] || c.h }))
-  ];
-  pronEl.innerHTML = allSyls.map(s => `
-    <div class="pron-syl">
-      <div class="ps-hangul">${s.h}</div>
-      <div class="ps-roman">${s.r}</div>
-    </div>`).join('');
-  document.getElementById('pronTip').innerHTML =
-    `💡 Tip: Korean is pronounced syllable by syllable. <strong>${fullRoman}</strong> — each syllable has equal stress. Practice saying each one slowly!`;
-
-  // Alternatives (다른 옵션들)
-  const altEl = document.getElementById('altGrid');
+  const allSyls = [{ h: currentSurname.hangul, r: currentSurname.roman }, ...selectedName.chars.map((c,i) => ({ h: c.h, r: selectedName.roman.split('-')[i] || c.h }))];
+  document.getElementById('pronSyllables').innerHTML = allSyls.map(s => `<div class="pron-syl"><div class="ps-hangul">${s.h}</div><div class="ps-roman">${s.r}</div></div>`).join('');
+  document.getElementById('pronTip').innerHTML = `💡 Tip: Korean is pronounced syllable by syllable. <strong>${fullRoman}</strong> — each syllable has equal stress. Practice saying each one slowly!`;
   const alts = namePool.filter((_, i) => i !== idx).slice(0, 6);
-  altEl.innerHTML = alts.map(n => `
-    <div class="alt-card" onclick="selectAlt(this, '${n.hangul}', '${n.roman}')">
-      <div class="ac-hangul">${currentSurname.hangul}${n.hangul}</div>
-      <div class="ac-roman">${currentSurname.roman} ${n.roman}</div>
-      <div class="ac-meaning">${n.meaning}</div>
-    </div>`).join('');
-
-  // Share
+  document.getElementById('altGrid').innerHTML = alts.map(n => `<div class="alt-card" onclick="selectAlt(this,'${n.hangul}','${n.roman}')"><div class="ac-hangul">${currentSurname.hangul}${n.hangul}</div><div class="ac-roman">${currentSurname.roman} ${n.roman}</div><div class="ac-meaning">${n.meaning}</div></div>`).join('');
   document.getElementById('shareKorean').textContent = fullHangul;
-  document.getElementById('shareDesc').textContent =
-    `My Korean name is ${fullHangul} (${fullRoman})! What's yours? 🇰🇷`;
-
-  // Show result
+  document.getElementById('shareDesc').textContent = `My Korean name is ${fullHangul} (${fullRoman})! What's yours? 🇰🇷`;
   const el = document.getElementById('result');
   el.classList.remove('show');
   void el.offsetWidth;
@@ -785,13 +602,11 @@ function selectAlt(el, hangul, roman) {
   document.getElementById('resultRoman').textContent = fullRoman;
   document.getElementById('r-given').textContent = hangul;
   document.getElementById('shareKorean').textContent = fullHangul;
-  document.getElementById('shareDesc').textContent =
-    `My Korean name is ${fullHangul} (${fullRoman})! What's yours? 🇰🇷`;
+  document.getElementById('shareDesc').textContent = `My Korean name is ${fullHangul} (${fullRoman})! What's yours? 🇰🇷`;
 }
 
 function copyResult() {
-  const text = document.getElementById('shareDesc').textContent +
-    '\n👉 Find your Korean name: https://junburi.github.io/korean-name-generator\n#KoreanName #Kpop';
+  const text = document.getElementById('shareDesc').textContent + '\n👉 Find your Korean name: https://junburi.github.io/korean-name-generator\n#KoreanName #Kpop';
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.querySelector('.copy-btn');
     btn.textContent = '✅ Copied!';
@@ -799,20 +614,12 @@ function copyResult() {
   });
 }
 
-// 인기 이름 버튼
 const popularList = ['Emma','Olivia','Sophia','Liam','Noah','James','Ava','Isabella','Charlotte','Lucas'];
-function initPopular() {
-  const el = document.getElementById('popularNames');
-  el.innerHTML = popularList.map(n =>
-    `<div class="pop-name" onclick="quickGenerate('${n}')">${n}</div>`
-  ).join('');
-}
+document.getElementById('popularNames').innerHTML = popularList.map(n => `<div class="pop-name" onclick="quickGenerate('${n}')">${n}</div>`).join('');
 function quickGenerate(name) {
   document.getElementById('firstName').value = name;
   generate();
 }
-
-initPopular();
 </script>
 </body>
 </html>
